@@ -1,18 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[ExecuteInEditMode]
 public class Orbit : MonoBehaviour {
-	float timeCounter=0;
 
-	float speed;
-	float l1;
-	float l2;
+	float timeCounter=0f;
+
+	public float speed = 1f;
+	public float l1 = 1f;
+	public float l2 = 1f;
+	public GameObject cObject;
+
+
+	//var playerPos:Vector3 = cObject.transform.position;
 
 	// Use this for initialization
 	void Start () {
-		speed = 1;
-		l1 = 1;
-		l2 = 1;
+		//speed = 1;
+		//l1 = 1;
+		//l2 = 1;
 	}
 
 	// Update is called once per frame
@@ -24,5 +30,7 @@ public class Orbit : MonoBehaviour {
 		float z = Mathf.Sin (timeCounter)*l2;
 
 		transform.position = new Vector3 (x, y, z);
+		transform.position = transform.position;
+			//* cObject.transform.positoin;
 	}
 }
